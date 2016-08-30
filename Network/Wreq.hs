@@ -481,11 +481,11 @@ basicAuth :: S.ByteString       -- ^ Username.
 basicAuth = BasicAuth
 
 -- | OAuth1 authentication. This consists of a consumer token,
--- a consumer secret, a token and a token secret
-oauth1Auth :: S.ByteString          -- ^ Consumer token
+-- a consumer secret, and optionally a token and a token secret
+oauth1Auth :: S.ByteString      -- ^ Consumer token
        -> S.ByteString          -- ^ Consumer secret
-       -> S.ByteString          -- ^ OAuth token
-       -> S.ByteString          -- ^ OAuth token secret
+       -> Maybe S.ByteString    -- ^ OAuth token
+       -> Maybe S.ByteString    -- ^ OAuth token secret
        -> Auth
 oauth1Auth = OAuth1
 
